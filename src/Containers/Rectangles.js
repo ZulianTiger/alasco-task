@@ -98,7 +98,14 @@ export default class Rectangles extends Component {
 
     //A function that will check if the rectangles have intersections
     checkIntersection = (r1, r2) => {
-        console.log('Checking if the rectangles have intersections...')
+        console.log('Checking if the rectangles have intersections...');
+
+        //If the lowest edge of R2 is higher than the highest edge od R1, then they can't intersect,
+        //If the highest edge of R2 is lower than the lowest edge of R1, then they can't intersect,
+        //If the left-most edge od R2 is more right than the right-most edge of R1, then they can't intersect,
+        //If the right-most edge of R2 is more left than the left-most edge of R1, then they can't intersect,
+        //In every other case they will have an intersection,
+        //Of course, this solution requires the rectangles to not be angles, but instead aligned with the x and y axis
         if (Math.min(r2[0], r2[2]) > Math.max(r1[0], r1[2]))
             return false;
         else if (Math.max(r2[0], r2[2]) < Math.min(r1[0], r1[2]))

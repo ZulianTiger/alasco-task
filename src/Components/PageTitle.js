@@ -9,8 +9,8 @@ export default class PageTitle extends Component {
     render() {
         return (
             <React.Fragment>
-                <Title>{this.props.title}</Title>
-                <Subtitle>{this.props.subtitle}</Subtitle>
+                <Title>{this.props.title || 'This is a mysterious page.'}</Title>
+                <Subtitle>{this.props.subtitle || '...and it does not have a subtitle'}</Subtitle>
             </React.Fragment>
         )
     }

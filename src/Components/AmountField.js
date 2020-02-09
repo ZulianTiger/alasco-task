@@ -55,6 +55,7 @@ export default function AmountField(props) {
                 <h1 style={{ fontSize: 72, marginTop: 32, marginBottom: 0 }}>{props.sign}</h1>
 
                 <InputField id="input" disabled={!props.isSelected} placeholder={props.placeholder} onChange={() => {
+                    console.log(parseInt(document.getElementById("input").value));
                     dispatch(calculateOutput(document.getElementById("input").value));
                 }} />
             </FlexContainer>

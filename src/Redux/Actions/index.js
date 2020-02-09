@@ -1,7 +1,7 @@
 export const calculateOutput = (input) => {
     return{
         type: 'CALCULATE_OUTPUT',
-        input: parseInt(input),
+        input: parseFloat(input),
     }
 }
 export const setTo = (to) => {

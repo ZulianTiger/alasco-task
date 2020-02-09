@@ -29,9 +29,13 @@ export default (state = initialState, action) => {
         });
     }
     else if (action.type === 'SET_RATE') {
+        let tempResult;
+        if(state.input)
+            tempResult = action.rate * state.input;
+        else tempResult = state.output;
         return Object.assign({}, state, {
             rate: action.rate,
-            output: action.rate * state.input,
+            output: tempResult,
         });
     }
     else return state;

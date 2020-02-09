@@ -63,6 +63,7 @@ export default class Dices extends Component {
                 }}>
                     Start Dice Game
             </button>
+            (Console program)
             </div>
         )
     }

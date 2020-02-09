@@ -143,6 +143,7 @@ export default class Rectangles extends Component {
                 }}>
                     Start Rectangles
             </button>
+            (Console program)
             </div>
         )
     }

@@ -14,7 +14,7 @@ export default class NavigationBar extends Component {
                 <Navbar variant="light" expand="lg">
                     <Navbar.Brand href="/">
                         <Title>
-                            Alasco - Frontend Task
+                            Alasco Task
                         </Title>
                         </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

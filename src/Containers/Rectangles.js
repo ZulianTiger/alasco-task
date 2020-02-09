@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 
-//Empty global array for holding the coordinates of each rectangle
-// example: R1 = [X1, Y1, X2, Y2]
+/*
+Empty global array for holding the coordinates of each rectangle
+example: R1 = [X1, Y1, X2, Y2]
+
+A rectangle is defined by two diagonally opposing points.
+By having these two points, it is possible to determine the
+lenght of each side, and therefore construct the remaining
+two points.
+*/
 let R1 = [];
 let R2 = [];
 
@@ -11,7 +18,7 @@ export default class Rectangles extends Component {
     //Also acts as validation
     itterateAsk = (rectangle) => {
         let r;
-        if(rectangle === 'R1')
+        if (rectangle === 'R1')
             r = R1;
         else if (rectangle === 'R2')
             r = R2;
@@ -22,59 +29,59 @@ export default class Rectangles extends Component {
                     let input;
                     let counter = 0;
                     while (!input && input !== 0) {
-                        if (counter > 0) 
+                        if (counter > 0)
                             input = parseInt(this.askForCoordinate('X', 'A', rectangle, 'Error: Input incorrect. Please enter a number.'));
-                        else 
+                        else
                             input = parseInt(this.askForCoordinate('X', 'A', rectangle));
                         counter++;
                     }
                     r.push(input);
                 }
-                break;
+                    break;
                 case 1: {
                     let input;
                     let counter = 0;
                     while (!input && input !== 0) {
-                        if (counter > 0) 
+                        if (counter > 0)
                             input = parseInt(this.askForCoordinate('Y', 'A', rectangle, 'Error: Input incorrect. Please enter a number.'));
-                        else 
+                        else
                             input = parseInt(this.askForCoordinate('Y', 'A', rectangle));
                         counter++;
                     }
                     r.push(input);
                 }
-                break;
+                    break;
                 case 2: {
                     let input;
                     let counter = 0;
                     while (!input && input !== 0) {
-                        if (counter > 0) 
+                        if (counter > 0)
                             input = parseInt(this.askForCoordinate('X', 'C', rectangle, 'Error: Input incorrect. Please enter a number.'));
-                        else 
+                        else
                             input = parseInt(this.askForCoordinate('X', 'C', rectangle));
                         counter++;
                     }
                     r.push(input);
                 }
-                break;
+                    break;
                 case 3: {
                     let input;
                     let counter = 0;
                     while (!input && input !== 0) {
-                        if (counter > 0) 
+                        if (counter > 0)
                             input = parseInt(this.askForCoordinate('Y', 'C', rectangle, 'Error: Input incorrect. Please enter a number.'));
-                        else 
+                        else
                             input = parseInt(this.askForCoordinate('Y', 'C', rectangle));
                         counter++;
                     }
                     r.push(input);
-                    if(!this.checkRectangle(r)) {
+                    if (!this.checkRectangle(r)) {
                         console.log('[' + r + '] is NOT a rectangle! Try again.');
                         r = [];
                     }
                     else console.log('[' + r + '] IS a legitimate rectangle.');
                 }
-                break;
+                    break;
                 default: {
                     console.log('An error occured');
                 }
@@ -114,19 +121,13 @@ export default class Rectangles extends Component {
             return false;
         else if (Math.max(r2[1], r2[3]) < Math.min(r1[1], r1[3]))
             return false;
-        else 
+        else
             return true;
     }
 
     render() {
         return (
             <div>
-                <p>
-                    A rectangle is defined by two diagonally opposing points.
-                    By having these two points, it is possible to determine the
-                    lenght of each side , and therefore construct the remaining
-                    two points.
-                </p>
                 <button onClick={() => {
                     //reseting the rectangle array on every click
                     R1 = [];
@@ -135,7 +136,7 @@ export default class Rectangles extends Component {
                     this.itterateAsk('R1');
                     this.itterateAsk('R2');
                     //checking for intersections
-                    if(this.checkIntersection(R1, R2))
+                    if (this.checkIntersection(R1, R2))
                         console.log('Yes, the two rectangles DO intersect each other!')
                     else
                         console.log('No, the rectangles DO NOT have an intersection');

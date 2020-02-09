@@ -38,7 +38,7 @@ export default class CurrencySelector extends Component {
                         }}>
                             <FlexContainer mobileFlexDirection={'row'} >
                                 <ButtonText>{this.state.selected}</ButtonText>
-                                <i style={{ fontSize: 12, color: '#000', marginLeft: 8.7, marginTop: 9 }} class="fas fa-angle-down"></i>
+                                <i style={{ fontSize: 12, color: '#000', marginLeft: 8.7, marginTop: 9 }} className="fas fa-angle-down"></i>
                             </FlexContainer>
                         </Dropdown.Toggle>
 
